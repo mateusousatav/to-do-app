@@ -1,0 +1,22 @@
+
+#homeContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+#homeHalf1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    width: 50vw;
+}
+
+#homeHalf2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    width: 50vw;
+}
