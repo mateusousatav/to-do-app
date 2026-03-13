@@ -1,22 +1,54 @@
-
 #homeContainer {
     display: flex;
     flex-direction: row;
     width: 100vw;
+    height: 100vh
 }
 
 #homeHalf1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
     width: 50vw;
+    background-color: #977068;
+    border-radius: 20px 0 0 20px;
 }
 
 #homeHalf2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
     width: 50vw;
+    background-color: #F0EEE1;
+    border-radius: 0 20px 20px 0;
+}
+
+#signupForm {
+    background-color: #92A89B;
+    height: 70vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 50px;
+    align-items: center;
+}
+
+input, button {
+    margin-top: 15px;
+    width: 250px;
+}
+
+input {
+    height: 40px;
+    font-size: 14px;
+    padding: 0 5px 0 5px;
+    border-radius: 14px;
+    border: 0;
+}
+
+button {
+    height: 40px;
+    border-radius: 14px;
+    border: 0;
 }
