@@ -1,23 +1,34 @@
 #homeContainer {
     display: flex;
     flex-direction: row;
-    width: 100vw;
-    height: 100vh
+    width: 100%;
+    height: 100%;
+    padding: 50px 0 50px 0;
+    /* background-image: linear-gradient(to right, #977068, #F0EEE1) */
+    background-color: #F0EEE1;
 }
 
 #homeHalf1 {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: center;
     width: 50vw;
-    background-color: #977068;
+    /* background-color: #977068; */
     border-radius: 20px 0 0 20px;
+    padding-left: 50px;
+    padding-right: 20px;
+}
+
+#quote {
+    font-size: 20px;
 }
 
 #homeHalf2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 50vw;
     background-color: #F0EEE1;
     border-radius: 0 20px 20px 0;
@@ -25,13 +36,13 @@
 
 #signupForm {
     background-color: #92A89B;
-    height: 70vh;
-    width: 30vw;
     display: flex;
     flex-direction: column;
     padding: 30px;
-    gap: 50px;
+    gap: 30px;
     align-items: center;
+    justify-content: center;
+    border-radius: 20px;
 }
 
 input, button {
@@ -44,11 +55,25 @@ input {
     font-size: 14px;
     padding: 0 5px 0 5px;
     border-radius: 14px;
-    border: 0;
+    border: 1px black dashed;
 }
 
 button {
     height: 40px;
     border-radius: 14px;
     border: 0;
+    background-color: #3C5F5F;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    #homeContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    hr {
+        width: 80%;
+        margin-top: 45px;
+    }
 }
