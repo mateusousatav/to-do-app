@@ -2,30 +2,36 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="login.css" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kotta+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
         <title>Login</title>
     </head>
-    <body>  
-        <div class = "welcomelogo">
-        <h2 style="text-align: center;"> Welcome Back! </h2>
-        </div>
-        <div class="form_container">
-            <form id="loginForm">
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br>
-            
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required><br><br>
-                <button type="submit" id="login" class="deepgreen_button">GO</button>
-            </form>
-            <p> If this was a mistake, go back to Sign Up <a href="home.html"> here </a></p>
+    <body>
+        <div id="loginPage">
+            <div class="loginCard form_card" id="login_card">
+                <h1>Welcome Back</h1>
+                <p class="subtitle">Let's get to work.</p>
+                <form id="loginForm">
+                    <div class="formSections">
+                        <label>Email</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="formSections">
+                        <label>Password</label>
+                        <input type="password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                    <a href="home.html">temporary link to home page</a>
+                </form>
+                <p class="authSwitch">
+                    New here? <a href="signup.html">Create an account</a>
+                </p>
+            </div>
         </div>
     </body>
-
 </html>

@@ -1,4 +1,66 @@
 html {
     font-family: "Montserrat";
-    font-weight: light;
+    font-weight: 300;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+.form_card {
+    background-color: #92A89B;
+    padding: 35px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    width: 300px
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formSections {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+input {
+    height: 40px;
+    border-radius: 14px;
+    border: 1px dashed black;
+    padding: 0 8px;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #3C5F5F;
+}
+
+button {
+    height: 40px;
+    border-radius: 14px;
+    border: none;
+    background-color: #3C5F5F;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.authSwitch {
+    font-size: 14px;
+    text-align: center;
 }

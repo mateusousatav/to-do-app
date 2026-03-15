@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="home.css" rel="stylesheet"/>
-    <link href="styles.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kotta+One&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Home</title>
-</head>
-<body>
-    <div id="homeContainer">
-        <div id="homeHalf1">
-            <h1>Welcome!<br>Let's get stuff done.</h1>
-            <!-- <img id="homeImg" src="/assets/home.png" alt="man typing on computer" /> -->
-            <p id="quote"> “Tony Stark built this in a cave with nothing but scraps” <br> - Anonymous</p>
-        </div>
-        <!-- <hr /> -->
-        <div id="homeHalf2">
-            <div class="form_container">
-                <h2> Signup </h2>
-                <form id="signupForm">
-                    <div class="formSections">
-                        <label for="email">Email:</label><br>
-                        <input type="email" id="email" name="email" required><br>
-                    </div>
-                    <div class="formSections">
-                        <label for="password">Password:</label><br>
-                        <input type="password" id="password" name="password" required><br><br>
-                    </div>
-                    <button type="submit" id="signup" class="black_button">Sign Up</button>
-                </form>
-                <p> Already have an account? <a href="login.html"> Login </a></p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="home.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kotta+One&display=swap" rel="stylesheet">
+        <title>To-Do</title>
+    </head>
+
+    <body>
+        <header id="navbar">
+            <h1 id="logo">To-Do</h1>
+            <a href="login.html" id="logout">Log out</a>
+        </header>
+
+        <main id="dashboard">
+            <div class="taskCard">
+                <h2>Your Tasks:</h2>
+                <ul class="taskList">
+                    <li>Placeholder</li>
+                    <li>Placeholder</li>
+                    <li>Placeholder</li>
+                    <li>Placeholder</li>
+                </ul>
+                <a class="completedLink">View Completed Tasks</a>
+                <button class="secondaryBtn">Complete All</button>
             </div>
-        </div>
-    </div>
-</body>
+
+            <div class="taskCard addTask">
+                <h2>Enter a New Task</h2>
+                <input type="text" placeholder="Type your task...">
+                <img src="/assets/plant.png" alt="plant sprout">
+                <button>GO</button>
+            </div>
+        </main>
+    </body>
 </html>

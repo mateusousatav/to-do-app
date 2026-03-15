@@ -1,4 +1,30 @@
-#welcomelogo{
-    display:flex; 
-    background-color: #E2725B;
+#loginPage {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(135deg, #977068, #F0EEE1);
+}
+
+.loginCard {
+    width: 320px;
+}
+
+.loginCard h1 {
+    font-family: "Kotta One";
+    margin: 0;
+}
+
+.subtitle {
+    margin-top: -10px;
+}
+
+#login_card {
+    width: 400px;
+}
+
+@media screen and (max-width: 500px) {
+    #login_card {
+        margin: 0 30px
+    }
 }
