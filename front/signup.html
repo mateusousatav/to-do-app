@@ -18,21 +18,25 @@
                 <p id="quote">
                 “Tony Stark built this in a cave with nothing but scraps”
                 <br>
-                – Not a good guy
+                – Jeff Bridges
                 </p>
             </div>
             <hr>
             <div id="homeHalf2">
                 <div class="form_card" id="signup_card">
-                    <h2>Signup</h2>
+                    <h2>Sign Up</h2>
                     <form id="signupForm">
                         <div class="formSections">
+                            <label>Username</label>
+                            <input id="username" type="username" required>
+                        </div>
+                        <div class="formSections">
                             <label>Email</label>
-                            <input type="email" required>
+                            <input id="email" type="email" required>
                         </div>
                         <div class="formSections">
                             <label>Password</label>
-                            <input type="password" required>
+                            <input id="password" type="password" required>
                         </div>
                         <button type="submit">Sign Up</button>
                     </form>
@@ -43,5 +47,6 @@
                 </div>
             </div>
         </div>
+        <script type="module" src="/back/signup.js"></script>
     </body>
 </html>

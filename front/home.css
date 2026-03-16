@@ -73,6 +73,18 @@
     width: 100%;
 }
 
+.list {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.listButton {
+    height: 22px;
+    width: 30px;
+    border-radius: 5px;
+}
+
 @media screen and (max-width: 900px) {
     #dashboard {
         flex-direction: column;
