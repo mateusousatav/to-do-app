@@ -85,6 +85,19 @@
     border-radius: 5px;
 }
 
+.listButton.completed {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.taskName.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
 @media screen and (max-width: 900px) {
     #dashboard {
         flex-direction: column;

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,39 +23,21 @@
         <main id="dashboard">
             <div class="taskCard">
                 <h2>Your Tasks:</h2>
-                <ul class="taskList">
-                    <div class="list">
-                        <li>Placeholder</li>
-                        <button class="listButton">✓</button>
-                        <p>Due Date: </p>
-                    </div>
-                    <div class="list">
-                        <li>Placeholder</li>
-                        <button class="listButton">✓</button>
-                        <p>Due Date: </p>
-                    </div>
-                    <div class="list">
-                        <li>Placeholder</li>
-                        <button class="listButton">✓</button>
-                        <p>Due Date: </p>
-                    </div>
-                    <div class="list">
-                        <li>Placeholder</li>
-                        <button class="listButton">✓</button>
-                        <p>Due Date: </p>
-                    </div>
+                <ul class="taskList" id="taskList">
                 </ul>
-                <a class="completedLink">View Completed Tasks</a>
-                <button class="secondaryBtn">Complete All</button>
+                <a href="completed.html" class="completedLink">View Completed Tasks</a>
+                <button class="secondaryBtn" id="completeAll">Complete All</button>
             </div>
 
             <div class="taskCard addTask">
                 <h2>Enter a New Task</h2>
                 <input id="task" type="text" placeholder="Type your task...">
-                <input id="dueDate" type="text" placeholder="Due Date...">
+                <input id="dueDate" type="date" placeholder="Due Date...">
                 <img src="/assets/plant.png" alt="plant sprout">
-                <button>GO</button>
+                <button id="addTask">Add Task</button>
             </div>
         </main>
+
+        <script type="module" src="/back/home.js"></script>
     </body>
 </html>

@@ -1,0 +1,98 @@
+/* General styles for the completed tasks page */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4caf50;
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header#navbar h1 {
+    font-family: 'Kotta One', serif;
+    font-size: 2rem;
+    margin: 0;
+}
+
+header#navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+header#navbar a:hover {
+    text-decoration: underline;
+}
+
+main#completedDashboard {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.taskCard {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.taskCard h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.completedTaskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.completedTaskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    color: #555;
+}
+
+.completedTaskList li:last-child {
+    border-bottom: none;
+}
+
+.completedTaskList li .taskName {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.secondaryBtn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.secondaryBtn:hover {
+    background-color: #45a049;
+}
+
+.secondaryBtn:active {
+    background-color: #3e8e41;
+}
