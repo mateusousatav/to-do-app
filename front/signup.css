@@ -1,7 +1,7 @@
 #homeContainer {
     display: flex;
     min-height: 100vh;
-    background-image: linear-gradient(to right, #977068, #F0EEE1);
+    /* background-image: linear-gradient(to right, #977068, #F0EEE1); */
 }
 
 #homeHalf1 {
@@ -40,7 +40,7 @@ hr {
     #homeContainer {
         flex-direction: column;
         align-items: center;
-        background-image: linear-gradient(to bottom, #977068, #F0EEE1);
+        background-image: linear-gradient(to right, #c8e6c4, #F0EEE1);
     }
 
     #homeHalf1 {

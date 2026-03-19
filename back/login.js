@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      alert("Logged in successfully!");
       window.location.href = "home.html";
     } catch (error) {
       alert("Error logging in: " + error.message);
