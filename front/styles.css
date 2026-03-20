@@ -24,7 +24,6 @@ html {
     font-weight: 900;
 }
 
-
 #links-div {
     display: flex;
     gap: 20px;
@@ -90,4 +89,8 @@ button:hover {
 .authSwitch {
     font-size: 14px;
     text-align: center;
+}
+
+.dark {
+    background-image: linear-gradient(to right, #98A79C , #3C5F5F);
 }
