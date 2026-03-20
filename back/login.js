@@ -19,3 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+darkToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});

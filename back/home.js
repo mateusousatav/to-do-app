@@ -72,3 +72,7 @@ onSnapshot(tasksRef, (snapshot) => {
     else taskList.appendChild(li);
   });
 });
+
+darkToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
