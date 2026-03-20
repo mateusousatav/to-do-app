@@ -19,25 +19,12 @@
             <a href="login.html" class="logout">Log-In</a>
         </div>
     </header>
-    
-    
-
     <main id="dashboard">
-
         <div id="taskCard1" class="taskCard">
             <h2>Your Tasks:</h2>
-
-            <!-- FILTER BUTTONS -->
-            <div>
-                <button id="filterAll">All</button>
-                <button id="filterCompleted">Completed</button>
-                <button id="filterPending">Pending</button>
-            </div>
-
             <ul class="taskList" id="taskList"></ul>
         </div>
 
-        <!-- ADD TASK -->
         <div class="taskCard addTask">
             <h2>Enter a New Task</h2>
             <input id="task" type="text" placeholder="Type your task...">
@@ -51,12 +38,10 @@
             <button id="addTask">Add Task</button>
         </div>
 
-        <!-- COMPLETED TASKS -->
         <div class="taskCard" id="completedCard">
             <h2>Completed Tasks:</h2>
             <ul class="taskList" id="completedTaskList"></ul>
         </div>
-
     </main>
     
     <div style="display: flex; justify-content: center;">
