@@ -1,4 +1,3 @@
-
 import { db } from "./firebase-config.js";
 import {
   collection,
@@ -52,28 +51,28 @@ onSnapshot(tasksRef, (snapshot) => {
     const li = document.createElement("li");
     li.classList.add("list");
 
+    
     li.innerHTML = `
       <span class="taskName ${task.completed ? "completed" : ""}">
         ${task.title} (${task.priority})
       </span>
-      <button class="listButton">${task.completed ? "✓" : ""}</button>
-      <p class="taskDueDate">Due: ${task.dueDate}</p>
-      <button class="deleteBtn">🗑</button>
+      ${!task.completed ? `<p class="taskDueDate">Due: ${task.dueDate}</p>` : ""}
+      <button class="completeBtn">${task.completed ? "Undo" : "Complete"}</button>
     `;
 
-    li.querySelector(".listButton").addEventListener("click", async () => {
+  
+    li.querySelector(".taskName").addEventListener("click", async () => {
       await updateDoc(doc(db, "tasks", id), { completed: !task.completed });
     });
 
-    li.querySelector(".deleteBtn").addEventListener("click", async () => {
-      await deleteDoc(doc(db, "tasks", id));
+    li.querySelector(".completeBtn").addEventListener("click", async () => {
+      await updateDoc(doc(db, "tasks", id), { completed: !task.completed });
     });
 
-    if (task.completed) completedTaskList.appendChild(li);
-    else taskList.appendChild(li);
+    if (task.completed) {
+      completedTaskList.appendChild(li);
+    } else {
+      taskList.appendChild(li);
+    }
   });
-});
-
-darkToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
 });
