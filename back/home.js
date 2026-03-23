@@ -1,58 +1,78 @@
+import { db } from "./firebase-config.js";
+import {
+  collection,
+  onSnapshot,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  doc,
+  serverTimestamp,
+  query,
+  orderBy
+} from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
 const taskInput = document.getElementById("task");
 const dueDateInput = document.getElementById("dueDate");
+const priorityInput = document.getElementById("priority");
 const addTaskButton = document.getElementById("addTask");
 const taskList = document.getElementById("taskList");
-const completeAllButton = document.getElementById("completeAll");
+const completedTaskList = document.getElementById("completedTaskList");
 
-// Add a new task
-addTaskButton.addEventListener("click", () => {
-    const taskName = taskInput.value.trim();
-    const dueDate = dueDateInput.value;
+addTaskButton.addEventListener("click", async () => {
+  const title = taskInput.value.trim();
+  const dueDate = dueDateInput.value;
+  const priority = priorityInput.value;
 
-    if (taskName === "" || dueDate === "") {
-        alert("Please enter both a task and a due date.");
-        return;
-    }
+  if (!title || !dueDate) return alert("Enter both task and due date");
 
-    const taskItem = document.createElement("div");
-    taskItem.classList.add("list");
+  await addDoc(collection(db, "tasks"), {
+    title,
+    dueDate,
+    priority,
+    completed: false,
+    createdAt: serverTimestamp()
+  });
 
-    taskItem.innerHTML = `
-        <li class="taskName">${taskName}</li>
-        <button class="listButton">✓</button>
-        <p class="taskDueDate">Due Date: ${dueDate}</p>
-    `;
-
-    // Add event listener to the checkbox
-    const checkButton = taskItem.querySelector(".listButton");
-    checkButton.addEventListener("click", () => {
-        checkButton.classList.add("completed");
-        taskItem.querySelector(".taskName").classList.add("completed");
-        moveToCompleted(taskItem);
-    });
-
-    taskList.appendChild(taskItem);
-
-    // Clear input fields
-    taskInput.value = "";
-    dueDateInput.value = "";
+  taskInput.value = "";
+  dueDateInput.value = "";
+  priorityInput.value = "low";
 });
 
-// Move task to completed tasks page
-function moveToCompleted(taskItem) {
-    taskItem.remove();
-    // Here, you can implement logic to save the completed task to localStorage
-    // or send it to the "completed.html" page dynamically.
-    alert("Task moved to completed tasks!");
-}
+const tasksRef = query(collection(db, "tasks"), orderBy("createdAt", "asc"));
 
-// Complete all tasks
-completeAllButton.addEventListener("click", () => {
-    const allTasks = taskList.querySelectorAll(".list");
-    allTasks.forEach(taskItem => {
-        const checkButton = taskItem.querySelector(".listButton");
-        checkButton.classList.add("completed");
-        taskItem.querySelector(".taskName").classList.add("completed");
-        moveToCompleted(taskItem);
+onSnapshot(tasksRef, (snapshot) => {
+  taskList.innerHTML = "";
+  completedTaskList.innerHTML = "";
+
+  snapshot.docs.forEach(docSnap => {
+    const task = docSnap.data();
+    const id = docSnap.id;
+
+    const li = document.createElement("li");
+    li.classList.add("list");
+
+    li.innerHTML = `
+      <span class="taskName ${task.completed ? "completed" : ""}">
+        ${task.title} (${task.priority})
+      </span>
+      <button class="listButton">${task.completed ? "✓" : ""}</button>
+      <p class="taskDueDate">Due: ${task.dueDate}</p>
+      <button class="deleteBtn">🗑</button>
+    `;
+
+    li.querySelector(".listButton").addEventListener("click", async () => {
+      await updateDoc(doc(db, "tasks", id), { completed: !task.completed });
     });
+
+    li.querySelector(".deleteBtn").addEventListener("click", async () => {
+      await deleteDoc(doc(db, "tasks", id));
+    });
+
+    if (task.completed) completedTaskList.appendChild(li);
+    else taskList.appendChild(li);
+  });
+});
+
+darkToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
 });

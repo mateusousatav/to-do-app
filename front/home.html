@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="home.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Kotta+One&display=swap" rel="stylesheet">
-        <title>To-Do</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kotta+One&display=swap" rel="stylesheet">
+    <title>To-Do</title>
+</head>
+<body>
+    <header id="navbar">
+        <img id="logo" src="/assets/logo.png" alt="Tik-it logo"/>
+        <div id="links-div">
+            <a href="signup.html" class="logout">Sign-Up</a>
+            <a href="login.html" class="logout">Log-In</a>
+        </div>
+    </header>
+    <main id="dashboard">
+        <div id="taskCard1" class="taskCard">
+            <h2>Your Tasks:</h2>
+            <ul class="taskList" id="taskList"></ul>
+        </div>
 
-    <body>
-        <header id="navbar">
-            <img id="logo" src="/assets/logo.png" alt="Tik-it logo"/>
-            <div id="links-div">
-                <a href="signup.html" class="logout">Sign-Up</a>
-                <a href="login.html" class="logout">Log-In</a>
-                <a href="settings.html" class="logout">Settings</a>
-            </div>
-        </header>
+        <div class="taskCard addTask">
+            <h2>Enter a New Task</h2>
+            <input id="task" type="text" placeholder="Type your task...">
+            <input id="dueDate" type="date">
+            <select id="priority">
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <img src="/assets/plant.png" alt="plant sprout">
+            <button id="addTask">Add Task</button>
+        </div>
 
-        <main id="dashboard">
-            <div id="taskCard1" class="taskCard">
-                <h2>Your Tasks:</h2>
-                <ul class="taskList" id="taskList">
-                </ul>
-                <a href="completed.html" class="completedLink">View Completed Tasks</a>
-                <button class="secondaryBtn" id="completeAll">Complete All</button>
-            </div>
+        <div class="taskCard" id="completedCard">
+            <h2>Completed Tasks:</h2>
+            <ul class="taskList" id="completedTaskList"></ul>
+        </div>
+    </main>
+    
+    <div style="display: flex; justify-content: center;">
+        <button id="darkToggle">Toggle Dark Mode</button>
+    </div>
+    
 
-            <div class="taskCard addTask">
-                <h2>Enter a New Task</h2>
-                <input id="task" type="text" placeholder="Type your task...">
-                <input id="dueDate" type="date" placeholder="Due Date...">
-                <img src="/assets/plant.png" alt="plant sprout">
-                <button id="addTask">Add Task</button>
-            </div>
-        </main>
 
-        <script type="module" src="/back/home.js"></script>
-    </body>
+    <script type="module" src="/back/home.js"></script>
+    <script type="module" src="/back/settings.js"></script>
+</body>
 </html>
