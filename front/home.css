@@ -1,11 +1,10 @@
-
 #dashboard {
     min-height: calc(100vh - 70px);
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 60px;
-    padding: 60px 40px 20px 40px
+    padding: 60px 40px 20px 40px;
 }
 
 .taskCard {
@@ -17,9 +16,10 @@
     padding: 40px;
     border-radius: 20px;
     gap: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     background-color: #cfe4d7 !important;
     font-weight: 900;
+    overflow-wrap: break-word;
 }
 
 #taskCard1 {
@@ -37,75 +37,36 @@
     font-size: 18px;
 }
 
+.taskName {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 .completedLink {
     font-size: 14px;
-    color: purple;
-    text-decoration: none;
 }
 
-.secondaryBtn {
-    font-weight: 500;   
-    font-family: "Montserrat"; 
-}
-
-.addTask {
-    font-weight: 500;   
-    font-family: "Montserrat";
-}
-
-.addTask > input {
-    font-family: "Montserrat";
-    font-weight: bold
-}
-
-.addTask img {
-    width: 90px;
-}
-
-.addTask input {
-    width: 100%;
-}
-
-.list {
-    display: flex;
-    align-items: center;
-    gap: 70px;
-}
-
-.listButton {
-    height: 22px;
-    width: 30px;
-    border-radius: 5px;
-}
-
-.listButton.completed {
-    background-color: green;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.taskName.completed {
-    text-decoration: line-through;
-    color: gray;
-}
-
-@media screen and (max-width: 900px) {
+/* Add responsive styles */
+@media (max-width: 768px) {
     #dashboard {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 20px;
+        padding: 20px;
     }
-}
 
-@media screen and (max-width: 480px) {
-    #dashboard {
-        padding: 40px 20px;
-    }
     .taskCard {
-        width: 80%;
-        padding: 30px;
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        font:16px; 
+        overflow-wrap: break-word;
+
     }
 
+    .taskList {
+        font-size: 16px;
+        padding-left: 10px;
+    }
 }
