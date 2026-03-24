@@ -11,17 +11,14 @@ import {
   orderBy
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
-// Inputs
 const taskInput = document.getElementById("task");
 const dueDateInput = document.getElementById("dueDate");
 const priorityInput = document.getElementById("priority");
 const addTaskButton = document.getElementById("addTask");
 
-// Lists
 const taskList = document.getElementById("taskList");
 const completedTaskList = document.getElementById("completedTaskList");
 
-// ➕ Add Task
 addTaskButton.addEventListener("click", async () => {
   const title = taskInput.value.trim();
   const dueDate = dueDateInput.value;
@@ -40,13 +37,11 @@ addTaskButton.addEventListener("click", async () => {
     createdAt: serverTimestamp()
   });
 
-  // Reset inputs
   taskInput.value = "";
   dueDateInput.value = "";
   priorityInput.value = "low";
 });
 
-// 🔄 Real-time listener
 const tasksRef = query(collection(db, "tasks"), orderBy("createdAt", "asc"));
 
 onSnapshot(tasksRef, (snapshot) => {
