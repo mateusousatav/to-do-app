@@ -1,4 +1,4 @@
-#dashboard {
+/* #dashboard {
     min-height: calc(100vh - 70px);
     display: flex;
     justify-content: center;
@@ -58,7 +58,7 @@
     font-size: 14px;
 }
 
-/* Add responsive styles */
+
 @media (max-width: 768px) {
     #dashboard {
         flex-direction: column;
@@ -80,5 +80,114 @@
     .taskList {
         font-size: 16px;
         padding-left: 10px;
+    }
+} */
+
+#dashboard {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 60px 40px 20px 40px;
+}
+
+/* Task Cards */
+.taskCard {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    border-radius: 20px;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background-color: #cfe4d7 !important;
+    font-weight: 900;
+}
+
+#taskCard1 {
+    background-color: #92A89B !important;
+}
+
+/* Task List */
+.taskList {
+    list-style: none; /* remove bullets */
+    padding: 0;
+    width: 100%;
+}
+
+/* Each Task */
+.taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255,255,255,0.15);
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Left side */
+.taskLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Text */
+.taskName {
+    font-size: 16px;
+    color: #f0eee1;
+}
+
+.taskDueDate {
+    font-size: 13px;
+    opacity: 0.8;
+    color: #f0eee1;
+}
+
+/* Right side buttons */
+.taskActions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Buttons */
+.listButton,
+.deleteBtn {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Specific buttons */
+.completeBtn {
+    background-color: #6da88c;
+    color: white;
+}
+
+.deleteBtn {
+    background-color: #d96c6c;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #dashboard {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .taskCard {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
     }
 }
