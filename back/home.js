@@ -119,7 +119,6 @@ addTaskButton.addEventListener("click", async () => {
     createdAt: serverTimestamp()
   });
 
-  // Reset inputs
   taskInput.value = "";
   dueDateInput.value = "";
   priorityInput.value = "low";
@@ -137,50 +136,51 @@ onSnapshot(tasksRef, (snapshot) => {
     const id = docSnap.id;
 
     const li = document.createElement("li");
-    li.classList.add("list");
 
-    // 🧱 Build task HTML
+    // 🧱 Better structured layout
     li.innerHTML = `
-      <span class="taskName ${task.completed ? "completed" : ""}">
-        ${task.title} (${task.priority})
-      </span>
-      ${
-        !task.completed
-          ? `<p class="taskDueDate">Due: ${task.dueDate}</p>`
-          : ""
-      }
-      <button class="completeBtn">
-        ${task.completed ? "Undo" : "Complete"}
-      </button>
-      ${
-        task.completed
-          ? `<button class="deleteBtn">Delete</button>`
-          : ""
-      }
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; width:100%;">
+        
+        <div style="flex:1;">
+          <div class="taskName ${task.completed ? "completed" : ""}">
+            ${task.title} (${task.priority})
+          </div>
+          ${
+            !task.completed
+              ? `<div class="taskDueDate">Due: ${task.dueDate}</div>`
+              : ""
+          }
+        </div>
+
+        <div style="display:flex; gap:8px;">
+          <button class="listButton completeBtn">
+            ${task.completed ? "↺" : "✓"}
+          </button>
+          ${
+            task.completed
+              ? `<button class="deleteBtn">✕</button>`
+              : ""
+          }
+        </div>
+
+      </div>
     `;
 
-    // ✅ Toggle complete (click name)
-    li.querySelector(".taskName").addEventListener("click", async () => {
-      await updateDoc(doc(db, "tasks", id), {
-        completed: !task.completed
-      });
-    });
-
-    // ✅ Toggle complete (button)
+    // Toggle complete
     li.querySelector(".completeBtn").addEventListener("click", async () => {
       await updateDoc(doc(db, "tasks", id), {
         completed: !task.completed
       });
     });
 
-    // 🗑️ Delete (ONLY if completed)
+    // Delete (only completed)
     if (task.completed) {
       li.querySelector(".deleteBtn").addEventListener("click", async () => {
         await deleteDoc(doc(db, "tasks", id));
       });
     }
 
-    // 📦 Append to correct list
+    // Append
     if (task.completed) {
       completedTaskList.appendChild(li);
     } else {
